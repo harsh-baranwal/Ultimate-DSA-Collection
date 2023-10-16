@@ -22,10 +22,18 @@ vector<int> leftRotate(int arr[], int n, int d) {
     }
 }
 
+void leftRotate2(int arr[], int n, int d) {
+    d = d%n;
+
+    reverse(arr, arr + d);
+    reverse(arr + d, arr + n);
+    reverse(arr, arr + n);
+}
+
 int main() {
     int arr[] = {1, 1, 3, 4, 4};
     int n=sizeof(arr)/sizeof(arr[0]);
-    leftRotate(arr, n, 3);
+    leftRotate2(arr, n, 3);
 
     for (auto i: arr) {
         cout << i << " ";
